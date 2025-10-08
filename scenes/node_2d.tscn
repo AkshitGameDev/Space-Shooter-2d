@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ktlgtr4tsjqw"]
+
+[ext_resource type="Texture2D" uid="uid://h3vavc1kbg4m" path="res://assets/icon.svg" id="1_igrb6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="badaboongaNode" type="Node2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(549, 386)
+scale = Vector2(2, 2)
+texture = ExtResource("1_igrb6")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1.0
+offset_right = 201.0
+offset_bottom = 200.0
+text = "button"
