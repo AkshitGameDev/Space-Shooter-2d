@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://df4g1hwvp32dg"]
+[gd_scene load_steps=3 format=3 uid="uid://df4g1hwvp32dg"]
+
+[ext_resource type="Texture2D" uid="uid://dh8wolt0cgpkf" path="res://assets/Dynamic Space Background FREE/Nebula Red.png" id="1_nm1cv"]
+[ext_resource type="PackedScene" uid="uid://3apcvggctoxh" path="res://scenes/player.tscn" id="2_rjlim"]
 
 [node name="level1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(27, 41)
+texture = ExtResource("1_nm1cv")
+
+[node name="Player" parent="." instance=ExtResource("2_rjlim")]
+position = Vector2(-3.05176e-05, 0)

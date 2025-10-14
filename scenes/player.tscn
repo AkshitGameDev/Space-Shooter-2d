@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://3apcvggctoxh"]
+
+[ext_resource type="Texture2D" uid="uid://dnspm76umycf7" path="res://assets/uploads_files_1995681_2DSpaceshipsFreeTrial/2DSpaceshipsFreeTrial/2DSpaceshipsFreeTrialTopView/2DSpaceshipsFreeTrialAtlasTopViewBlack.png" id="1_o1a0s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwuoc"]
+atlas = ExtResource("1_o1a0s")
+region = Rect2(1110, 1278, 914, 730)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7c403"]
+size = Vector2(48, 91)
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = SubResource("AtlasTexture_vwuoc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_7c403")
