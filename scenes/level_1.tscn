@@ -1,13 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://df4g1hwvp32dg"]
+[gd_scene load_steps=5 format=3 uid="uid://df4g1hwvp32dg"]
 
 [ext_resource type="Texture2D" uid="uid://dh8wolt0cgpkf" path="res://assets/Dynamic Space Background FREE/Nebula Red.png" id="1_nm1cv"]
 [ext_resource type="PackedScene" uid="uid://3apcvggctoxh" path="res://scenes/player.tscn" id="2_rjlim"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebuci"]
+size = Vector2(1166, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcsll"]
+size = Vector2(25, 668)
+
 [node name="level1" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(27, 41)
+position = Vector2(516, 244)
+scale = Vector2(0.395508, 0.364258)
 texture = ExtResource("1_nm1cv")
 
 [node name="Player" parent="." instance=ExtResource("2_rjlim")]
-position = Vector2(-3.05176e-05, 0)
+position = Vector2(670, 497)
+Speed = 400.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(573, 0)
+shape = SubResource("RectangleShape2D_ebuci")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(580, 652)
+shape = SubResource("RectangleShape2D_ebuci")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-8, 324)
+shape = SubResource("RectangleShape2D_hcsll")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1173, 328)
+shape = SubResource("RectangleShape2D_hcsll")
