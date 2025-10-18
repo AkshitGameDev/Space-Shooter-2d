@@ -12,8 +12,8 @@ size = Vector2(25, 668)
 [node name="level1" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(516, 244)
-scale = Vector2(0.395508, 0.364258)
+position = Vector2(579, 335)
+scale = Vector2(0.285645, 0.157227)
 texture = ExtResource("1_nm1cv")
 
 [node name="Player" parent="." instance=ExtResource("2_rjlim")]
@@ -35,5 +35,5 @@ position = Vector2(-8, 324)
 shape = SubResource("RectangleShape2D_hcsll")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1173, 328)
+position = Vector2(1167, 328)
 shape = SubResource("RectangleShape2D_hcsll")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://d02bepui0ciow"]
+
+[ext_resource type="Script" path="res://scripts/bolt.gd" id="1_4khbo"]
+[ext_resource type="Texture2D" uid="uid://b7jq28tqmilef" path="res://assets/Warped shooting fx files/Warped shooting fx files/Pixelart/Bolt/frames/bolt1.png" id="1_ekok5"]
+[ext_resource type="Texture2D" uid="uid://jm5peamvnxad" path="res://assets/Warped shooting fx files/Warped shooting fx files/Pixelart/Bolt/frames/bolt2.png" id="2_41gdc"]
+[ext_resource type="Texture2D" uid="uid://dxv580njwj30d" path="res://assets/Warped shooting fx files/Warped shooting fx files/Pixelart/Bolt/frames/bolt3.png" id="3_e6ota"]
+[ext_resource type="Texture2D" uid="uid://vx0noe6cfxgt" path="res://assets/Warped shooting fx files/Warped shooting fx files/Pixelart/Bolt/frames/bolt4.png" id="4_txdu3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1npoe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ekok5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_41gdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e6ota")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_txdu3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="bolt" type="Node2D"]
+rotation = 1.5708
+script = ExtResource("1_4khbo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1npoe")
+autoplay = "default"
+frame_progress = 0.370157
