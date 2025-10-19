@@ -9,8 +9,7 @@ region = Rect2(842, 101, 657, 1134)
 
 [node name="Enemy1" type="CharacterBody2D"]
 rotation = 3.14159
-scale = Vector2(0.0961267, 0.0929783)
-collision_layer = 2
+scale = Vector2(0.110665, 0.1)
 script = ExtResource("1_nnj2c")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
