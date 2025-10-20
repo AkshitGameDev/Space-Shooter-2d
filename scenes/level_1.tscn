@@ -41,6 +41,10 @@ shape = SubResource("RectangleShape2D_hcsll")
 
 [node name="Enemy1" parent="." instance=ExtResource("3_qlyhu")]
 position = Vector2(88, 126)
+timeToLoadBullet = 1.0
+Chance = 2
 
 [node name="Enemy2" parent="." instance=ExtResource("3_qlyhu")]
-position = Vector2(1011, 117)
+position = Vector2(1013, 122)
+timeToLoadBullet = 1.0
+Chance = 2

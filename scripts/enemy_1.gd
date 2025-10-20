@@ -6,6 +6,11 @@ var movementVector: Vector2 = Vector2(1,0)
 @onready var crossed = preload("res://scenes/crossed.tscn")
 
 var timerToSHoot: float
+@export var timeToLoadBullet: float = 3
+@export var Chance: int=3
+
+func _ready():
+	timerToSHoot = randf_range(-1 , timeToLoadBullet)
 
 func _physics_process(delta):
 	if position.x >= 1100:
@@ -15,9 +20,9 @@ func _physics_process(delta):
 	velocity = movementVector * speed
 	move_and_slide()
 	
-	if timerToSHoot > 2:
+	if timerToSHoot > timeToLoadBullet:
 		timerToSHoot = 0
-		var rng = randi_range(0,3)
+		var rng = randi_range(0,Chance)
 		if rng == 0:
 			var crossedCopy = crossed.instantiate()
 			crossedCopy.position = position
