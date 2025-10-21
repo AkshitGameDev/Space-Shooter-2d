@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://d02bepui0ciow"]
+[gd_scene load_steps=9 format=3 uid="uid://d02bepui0ciow"]
 
 [ext_resource type="Script" path="res://scripts/bolt.gd" id="1_4khbo"]
 [ext_resource type="Texture2D" uid="uid://b7jq28tqmilef" path="res://assets/Warped shooting fx files/Warped shooting fx files/Pixelart/Bolt/frames/bolt1.png" id="1_ekok5"]
 [ext_resource type="Texture2D" uid="uid://jm5peamvnxad" path="res://assets/Warped shooting fx files/Warped shooting fx files/Pixelart/Bolt/frames/bolt2.png" id="2_41gdc"]
 [ext_resource type="Texture2D" uid="uid://dxv580njwj30d" path="res://assets/Warped shooting fx files/Warped shooting fx files/Pixelart/Bolt/frames/bolt3.png" id="3_e6ota"]
 [ext_resource type="Texture2D" uid="uid://vx0noe6cfxgt" path="res://assets/Warped shooting fx files/Warped shooting fx files/Pixelart/Bolt/frames/bolt4.png" id="4_txdu3"]
+[ext_resource type="AudioStream" uid="uid://djgh3ingkj35k" path="res://assets/sounds/317136__bird_man__sci-fi-gun-shot.wav" id="6_bvvj5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1npoe"]
 animations = [{
@@ -45,5 +46,10 @@ collision_mask = 2
 position = Vector2(-5.5, -0.500041)
 scale = Vector2(1, 1.01728)
 shape = SubResource("RectangleShape2D_0neqh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_bvvj5")
+pitch_scale = 1.06
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

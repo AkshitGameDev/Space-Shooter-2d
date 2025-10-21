@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://o12855avstuh"]
+[gd_scene load_steps=10 format=3 uid="uid://o12855avstuh"]
 
 [ext_resource type="Texture2D" uid="uid://bd5hdndoj6hw6" path="res://assets/craftpix-781145-free-space-shooter-game-objects/PNG/Sprites/Bombs/Bomb_1_Explosion_002.png" id="1_dsivi"]
 [ext_resource type="Texture2D" uid="uid://cp7rysamxhixp" path="res://assets/craftpix-781145-free-space-shooter-game-objects/PNG/Sprites/Bombs/Bomb_1_Explosion_003.png" id="2_3l5e1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cpontca46oib0" path="res://assets/craftpix-781145-free-space-shooter-game-objects/PNG/Sprites/Bombs/Bomb_1_Explosion_006.png" id="5_nla88"]
 [ext_resource type="Texture2D" uid="uid://d7hej4cn8lme" path="res://assets/craftpix-781145-free-space-shooter-game-objects/PNG/Sprites/Bombs/Bomb_1_Explosion_007.png" id="6_3gy6x"]
 [ext_resource type="Texture2D" uid="uid://137iqg71mkt8" path="res://assets/craftpix-781145-free-space-shooter-game-objects/PNG/Sprites/Bombs/Bomb_1_Explosion_008.png" id="7_0vsc5"]
+[ext_resource type="AudioStream" uid="uid://l82g3057m4op" path="res://assets/sounds/170144__timgormly__8-bit-explosion2.wav" id="8_r5nif"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sce21"]
 animations = [{
@@ -43,3 +44,9 @@ sprite_frames = SubResource("SpriteFrames_sce21")
 autoplay = "default"
 frame = 6
 frame_progress = 1.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_r5nif")
+volume_db = -6.0
+pitch_scale = 1.32
+autoplay = true
