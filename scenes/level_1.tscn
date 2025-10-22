@@ -50,7 +50,7 @@ Chance = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="LosePanel" type="TextureRect" parent="CanvasLayer"]
+[node name="LosePanel" type="TextureRect" parent="CanvasLayer" groups=["LosePannel"]]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -151,7 +151,8 @@ theme_override_font_sizes/font_size = 17
 text = "MAIN MENU"
 horizontal_alignment = 1
 
-[node name="WinPanel" type="TextureRect" parent="CanvasLayer"]
+[node name="WinPanel" type="TextureRect" parent="CanvasLayer" groups=["WinPannel"]]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
