@@ -1,15 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc1b3gdwyxood"]
+[gd_scene load_steps=3 format=3 uid="uid://dc1b3gdwyxood"]
 
-[ext_resource type="Texture2D" uid="uid://dh8wolt0cgpkf" path="res://assets/Dynamic Space Background FREE/Nebula Red.png" id="1_nfhdn"]
+[ext_resource type="Script" path="res://scripts/back_ground_manager.gd" id="1_8gpe4"]
+[ext_resource type="PackedScene" uid="uid://bot8d0sdab2mi" path="res://scenes/bg.tscn" id="1_o7kcq"]
 
 [node name="BackGroundManager" type="Node2D"]
+script = ExtResource("1_8gpe4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(579, 273)
-scale = Vector2(0.306, 0.248)
-texture = ExtResource("1_nfhdn")
+[node name="BG" parent="." instance=ExtResource("1_o7kcq")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(579, 273)
-scale = Vector2(0.306, 0.248)
-texture = ExtResource("1_nfhdn")
+[node name="BG2" parent="." instance=ExtResource("1_o7kcq")]
+position = Vector2(575, -569)
+
+[node name="BG3" parent="." instance=ExtResource("1_o7kcq")]
+position = Vector2(575, -1585)

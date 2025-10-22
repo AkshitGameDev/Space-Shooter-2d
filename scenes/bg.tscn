@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bot8d0sdab2mi"]
+
+[ext_resource type="Texture2D" uid="uid://dh8wolt0cgpkf" path="res://assets/Dynamic Space Background FREE/Nebula Red.png" id="1_xnehy"]
+
+[node name="BG" type="Sprite2D"]
+position = Vector2(575, 447)
+scale = Vector2(0.306, 0.248)
+texture = ExtResource("1_xnehy")
