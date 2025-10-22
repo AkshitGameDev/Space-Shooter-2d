@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://df4g1hwvp32dg"]
+[gd_scene load_steps=8 format=3 uid="uid://df4g1hwvp32dg"]
 
 [ext_resource type="PackedScene" uid="uid://dc1b3gdwyxood" path="res://scenes/back_ground_manager.tscn" id="1_aaran"]
 [ext_resource type="PackedScene" uid="uid://3apcvggctoxh" path="res://scenes/player.tscn" id="2_rjlim"]
 [ext_resource type="PackedScene" uid="uid://dsk3rghw6b4v3" path="res://scenes/enemy_1.tscn" id="3_qlyhu"]
+[ext_resource type="Texture2D" uid="uid://blruvuxm1lxj7" path="res://assets/gui/Panels Gray/Panel 3_.png" id="4_35po4"]
+[ext_resource type="Texture2D" uid="uid://c653fag1kjffr" path="res://assets/gui/Standart Button Hover/Standart Button Hover 3.png" id="5_fmmmw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebuci"]
 size = Vector2(1166, 20)
@@ -45,3 +47,206 @@ Chance = 2
 position = Vector2(1013, 122)
 timeToLoadBullet = 1.0
 Chance = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LosePanel" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -178.5
+offset_right = 244.0
+offset_bottom = 178.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_35po4")
+
+[node name="LoseLabel" type="Label" parent="CanvasLayer/LosePanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -235.0
+offset_top = 20.0
+offset_right = 233.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.990795, 0.428265, 3.85046e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 40
+text = "YOU LOSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TryAgainButton" type="TextureButton" parent="CanvasLayer/LosePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -22.5
+offset_right = 61.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_fmmmw")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/LosePanel/TryAgainButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -15.0
+offset_right = 47.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "TRY AGAIN"
+horizontal_alignment = 1
+
+[node name="MainMenuButton" type="TextureButton" parent="CanvasLayer/LosePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = 41.5
+offset_right = 61.5
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_fmmmw")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/LosePanel/MainMenuButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -15.0
+offset_right = 47.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "MAIN MENU"
+horizontal_alignment = 1
+
+[node name="WinPanel" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -178.5
+offset_right = 244.0
+offset_bottom = 178.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_35po4")
+
+[node name="WinLabel" type="Label" parent="CanvasLayer/WinPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -235.0
+offset_top = 20.0
+offset_right = 233.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.990795, 0.428265, 3.85046e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 40
+text = "YOU WIN!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TryAgainButton" type="TextureButton" parent="CanvasLayer/WinPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -22.5
+offset_right = 61.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_fmmmw")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/WinPanel/TryAgainButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -15.0
+offset_right = 47.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "NEXT LEVEL"
+horizontal_alignment = 1
+
+[node name="MainMenuButton" type="TextureButton" parent="CanvasLayer/WinPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = 41.5
+offset_right = 61.5
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_fmmmw")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/WinPanel/MainMenuButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -15.0
+offset_right = 47.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "MAIN MENU"
+horizontal_alignment = 1
