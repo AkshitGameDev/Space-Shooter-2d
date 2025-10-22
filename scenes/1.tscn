@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://df4g1hwvp32dg"]
+[gd_scene load_steps=9 format=3 uid="uid://df4g1hwvp32dg"]
 
-[ext_resource type="PackedScene" uid="uid://dc1b3gdwyxood" path="res://scenes/back_ground_manager.tscn" id="1_aaran"]
-[ext_resource type="PackedScene" uid="uid://3apcvggctoxh" path="res://scenes/player.tscn" id="2_rjlim"]
-[ext_resource type="PackedScene" uid="uid://dsk3rghw6b4v3" path="res://scenes/enemy_1.tscn" id="3_qlyhu"]
-[ext_resource type="Texture2D" uid="uid://blruvuxm1lxj7" path="res://assets/gui/Panels Gray/Panel 3_.png" id="4_35po4"]
-[ext_resource type="Texture2D" uid="uid://c653fag1kjffr" path="res://assets/gui/Standart Button Hover/Standart Button Hover 3.png" id="5_fmmmw"]
+[ext_resource type="PackedScene" uid="uid://dc1b3gdwyxood" path="res://scenes/back_ground_manager.tscn" id="1_4nohs"]
+[ext_resource type="PackedScene" uid="uid://3apcvggctoxh" path="res://scenes/player.tscn" id="2_hc6gv"]
+[ext_resource type="PackedScene" uid="uid://dsk3rghw6b4v3" path="res://scenes/enemy_1.tscn" id="3_n1eos"]
+[ext_resource type="Script" path="res://scripts/GameCanvas.gd" id="4_kbqfc"]
+[ext_resource type="Texture2D" uid="uid://blruvuxm1lxj7" path="res://assets/gui/Panels Gray/Panel 3_.png" id="5_ng3p8"]
+[ext_resource type="Texture2D" uid="uid://c653fag1kjffr" path="res://assets/gui/Standart Button Hover/Standart Button Hover 3.png" id="6_lp76q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebuci"]
 size = Vector2(1166, 20)
@@ -12,11 +13,11 @@ size = Vector2(1166, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hcsll"]
 size = Vector2(25, 668)
 
-[node name="level1" type="Node2D"]
+[node name="1" type="Node2D"]
 
-[node name="BackGroundManager" parent="." instance=ExtResource("1_aaran")]
+[node name="BackGroundManager" parent="." instance=ExtResource("1_4nohs")]
 
-[node name="Player" parent="." instance=ExtResource("2_rjlim")]
+[node name="Player" parent="." instance=ExtResource("2_hc6gv")]
 position = Vector2(670, 497)
 Speed = 400.0
 
@@ -38,19 +39,20 @@ shape = SubResource("RectangleShape2D_hcsll")
 position = Vector2(1167, 328)
 shape = SubResource("RectangleShape2D_hcsll")
 
-[node name="Enemy1" parent="." instance=ExtResource("3_qlyhu")]
+[node name="Enemy1" parent="." instance=ExtResource("3_n1eos")]
 position = Vector2(88, 126)
 timeToLoadBullet = 1.0
 Chance = 2
 
-[node name="Enemy2" parent="." instance=ExtResource("3_qlyhu")]
+[node name="Enemy2" parent="." instance=ExtResource("3_n1eos")]
 position = Vector2(1013, 122)
 timeToLoadBullet = 1.0
 Chance = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="GameCanvas" type="CanvasLayer" parent="."]
+script = ExtResource("4_kbqfc")
 
-[node name="LosePanel" type="TextureRect" parent="CanvasLayer" groups=["LosePannel"]]
+[node name="LosePanel" type="TextureRect" parent="GameCanvas" groups=["LosePannel"]]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -63,9 +65,9 @@ offset_right = 244.0
 offset_bottom = 178.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_35po4")
+texture = ExtResource("5_ng3p8")
 
-[node name="LoseLabel" type="Label" parent="CanvasLayer/LosePanel"]
+[node name="LoseLabel" type="Label" parent="GameCanvas/LosePanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -83,7 +85,7 @@ text = "YOU LOSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TryAgainButton" type="TextureButton" parent="CanvasLayer/LosePanel"]
+[node name="TryAgainButton" type="TextureButton" parent="GameCanvas/LosePanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -96,10 +98,10 @@ offset_right = 61.5
 offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("5_fmmmw")
+texture_normal = ExtResource("6_lp76q")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/LosePanel/TryAgainButton"]
+[node name="Label" type="Label" parent="GameCanvas/LosePanel/TryAgainButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -117,7 +119,7 @@ theme_override_font_sizes/font_size = 17
 text = "TRY AGAIN"
 horizontal_alignment = 1
 
-[node name="MainMenuButton" type="TextureButton" parent="CanvasLayer/LosePanel"]
+[node name="MainMenuButton" type="TextureButton" parent="GameCanvas/LosePanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -130,10 +132,10 @@ offset_right = 61.5
 offset_bottom = 86.5
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("5_fmmmw")
+texture_normal = ExtResource("6_lp76q")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/LosePanel/MainMenuButton"]
+[node name="Label" type="Label" parent="GameCanvas/LosePanel/MainMenuButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -151,7 +153,7 @@ theme_override_font_sizes/font_size = 17
 text = "MAIN MENU"
 horizontal_alignment = 1
 
-[node name="WinPanel" type="TextureRect" parent="CanvasLayer" groups=["WinPannel"]]
+[node name="WinPanel" type="TextureRect" parent="GameCanvas" groups=["WinPannel"]]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -164,9 +166,9 @@ offset_right = 244.0
 offset_bottom = 178.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_35po4")
+texture = ExtResource("5_ng3p8")
 
-[node name="WinLabel" type="Label" parent="CanvasLayer/WinPanel"]
+[node name="WinLabel" type="Label" parent="GameCanvas/WinPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -184,7 +186,7 @@ text = "YOU WIN!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TryAgainButton" type="TextureButton" parent="CanvasLayer/WinPanel"]
+[node name="TryAgainButton" type="TextureButton" parent="GameCanvas/WinPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -197,10 +199,10 @@ offset_right = 61.5
 offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("5_fmmmw")
+texture_normal = ExtResource("6_lp76q")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/WinPanel/TryAgainButton"]
+[node name="Label" type="Label" parent="GameCanvas/WinPanel/TryAgainButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -218,7 +220,7 @@ theme_override_font_sizes/font_size = 17
 text = "NEXT LEVEL"
 horizontal_alignment = 1
 
-[node name="MainMenuButton" type="TextureButton" parent="CanvasLayer/WinPanel"]
+[node name="MainMenuButton" type="TextureButton" parent="GameCanvas/WinPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -231,10 +233,10 @@ offset_right = 61.5
 offset_bottom = 86.5
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("5_fmmmw")
+texture_normal = ExtResource("6_lp76q")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/WinPanel/MainMenuButton"]
+[node name="Label" type="Label" parent="GameCanvas/WinPanel/MainMenuButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -251,3 +253,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 17
 text = "MAIN MENU"
 horizontal_alignment = 1
+
+[connection signal="pressed" from="GameCanvas/LosePanel/TryAgainButton" to="GameCanvas" method="_on_try_again_button_pressed"]
+[connection signal="pressed" from="GameCanvas/LosePanel/MainMenuButton" to="GameCanvas" method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="GameCanvas/WinPanel/MainMenuButton" to="GameCanvas" method="_on_main_menu_button_pressed"]

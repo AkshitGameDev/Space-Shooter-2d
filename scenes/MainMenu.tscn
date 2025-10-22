@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://crdxhr2eiiq1d"]
+
+[ext_resource type="Texture2D" uid="uid://dcnp2h3nnc4wk" path="res://assets/Dynamic Space Background FREE/Nebula Blue.png" id="1_twbxh"]
+[ext_resource type="Script" path="res://scripts/GameCanvas.gd" id="4_gafe4"]
+[ext_resource type="Texture2D" uid="uid://c653fag1kjffr" path="res://assets/gui/Standart Button Hover/Standart Button Hover 3.png" id="6_l8cw6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebuci"]
+size = Vector2(1166, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcsll"]
+size = Vector2(25, 668)
+
+[node name="1" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(575, 447)
+scale = Vector2(0.313194, 0.266414)
+texture = ExtResource("1_twbxh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(573, 0)
+shape = SubResource("RectangleShape2D_ebuci")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(580, 652)
+shape = SubResource("RectangleShape2D_ebuci")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-8, 324)
+shape = SubResource("RectangleShape2D_hcsll")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1167, 328)
+shape = SubResource("RectangleShape2D_hcsll")
+
+[node name="GameCanvas" type="CanvasLayer" parent="."]
+script = ExtResource("4_gafe4")
+
+[node name="PlayButton" type="TextureButton" parent="GameCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = 41.5
+offset_right = 61.5
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_l8cw6")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="GameCanvas/PlayButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -15.0
+offset_right = 47.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "PLAY"
+horizontal_alignment = 1
+
+[node name="ExitButton" type="TextureButton" parent="GameCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = 118.0
+offset_right = 62.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_l8cw6")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="GameCanvas/ExitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -15.0
+offset_right = 47.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "EXIT
+"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="GameCanvas/PlayButton" to="GameCanvas" method="_on_play_button_pressed"]
