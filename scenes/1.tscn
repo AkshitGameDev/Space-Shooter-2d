@@ -186,7 +186,7 @@ text = "YOU WIN!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TryAgainButton" type="TextureButton" parent="GameCanvas/WinPanel"]
+[node name="NextLevelButton" type="TextureButton" parent="GameCanvas/WinPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -202,7 +202,7 @@ grow_vertical = 2
 texture_normal = ExtResource("6_lp76q")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="GameCanvas/WinPanel/TryAgainButton"]
+[node name="Label" type="Label" parent="GameCanvas/WinPanel/NextLevelButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

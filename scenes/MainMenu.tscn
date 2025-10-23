@@ -106,3 +106,4 @@ text = "EXIT
 horizontal_alignment = 1
 
 [connection signal="pressed" from="GameCanvas/PlayButton" to="GameCanvas" method="_on_play_button_pressed"]
+[connection signal="pressed" from="GameCanvas/ExitButton" to="GameCanvas" method="_on_exit_button_pressed"]
